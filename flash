@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -euxo pipefail
+
+ssh deb 'rm -rf dev/verilog-learning'
+
+cd "$1"
+scp -r . ../build.tcl deb:/home/joe/dev/verilog-learning
+
+ssh -o ServerAliveInterval=5 -o ServerAliveCountMax=10000 deb \
+  'cd dev/verilog-learning && /media/ssd/Xilinx/Vivado/2023.2/bin/vivado -mode batch -nojournal -source build.tcl'
