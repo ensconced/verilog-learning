@@ -1,10 +1,10 @@
 `timescale 10ns/1ns
 
-module and_gate_tb();
+module tb();
   reg in_a, in_b;
   wire out;
 
-  and_gate_project UUT (
+  top UUT (
     .in_a(in_a),
     .in_b(in_b),
     .out(out)
