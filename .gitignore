@@ -3,3 +3,10 @@
 *.pb
 *.dir
 *.jou
+*.xpr
+*.hw
+*.cache
+*.bit
+*.Xil
+*.ip_user_files
+clockInfo.txt
