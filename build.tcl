@@ -1,8 +1,8 @@
-foreach source_file [glob *.v] {
+foreach source_file [glob projects/switch/*.v] {
   read_verilog -sv $source_file
 }
 
-read_xdc basys3.xdc
+read_xdc projects/switch/basys3.xdc
 
 save_project_as -force verilog-learning
 
