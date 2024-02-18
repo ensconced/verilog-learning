@@ -1,10 +1,8 @@
-foreach source_file [glob projects/switch/*.v] {
+foreach source_file [glob projects/$argv/*.v] {
   read_verilog -sv $source_file
 }
 
-read_xdc projects/switch/basys3.xdc
-
-save_project_as -force verilog-learning
+read_xdc projects/$argv/basys3.xdc
 
 synth_design -top top -part xc7a35tcpg236-1
 opt_design
