@@ -1,3 +1,5 @@
+`timescale 10ns/1ns
+
 module top #(parameter DEBOUNCE_LIMIT = 20) (
   input in,
   input clk,
@@ -6,7 +8,7 @@ module top #(parameter DEBOUNCE_LIMIT = 20) (
   reg [$clog2(DEBOUNCE_LIMIT) - 1:0] count = 0;
   reg state = 1'b0;
 
-  always(@posedge clk) begin
+  always @(posedge clk) begin
     if (in === state)
       begin
         count <= 0;
